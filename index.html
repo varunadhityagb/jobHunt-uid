@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Hunt Pro</title>
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+    <div class="titleDiv">
+        <div class="title">Job Hunt Pro</div>
+        <div class="apply">Apply</div>
+        <div class="toggle">
+            <input type="checkbox" id="cbs">
+            <span class="toggleInner"></span>
+        </div>
+        <div class="hire">Hire</div>
+    </div>
+       
+
+
+    <script>
+        let toggleSwitch = document.querySelector(".toggle");
+        let cb = document.getElementById('cbs');
+        toggleSwitch.addEventListener('click', () => {
+            if(cb.checked == true) {
+                cb.checked = false;
+            } else {
+                cb.checked = true;
+            };
+        });
+    </script>
+
+</body>
+</html>

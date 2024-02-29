@@ -1,0 +1,94 @@
+
+:root {
+    --night: #000f08ff;
+    --pine-green: #136f63ff;
+    --citrine: #e0ca3cff;
+    --coquelicot: #f34213ff;
+    --russian-violet: #3e2f5bff;
+}
+
+body {
+    background-color: var(--pine-green);
+}
+
+.titleDiv {
+    background-color: gray;
+}
+
+.apply{
+    position: absolute;
+    top: 5%;
+    right: 6%; 
+}
+
+.hire {
+    position: absolute;
+    top: 5%;
+    right: 16%;   
+}
+
+
+.titleDiv .title {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: 3rem;
+    color: var(--night);
+}
+
+.titleDiv > .title:hover {
+    color: var(--citrine);
+}
+
+.toggle input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+input:checked + .toggleInner {
+    background-color: var(--coquelicot);
+}
+
+input:checked + .toggleInner:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+.toggle {
+    position: absolute;
+    top: 4%;
+    right: 10%;
+    width: 60px;
+    height: 34px;
+}
+
+.toggleInner {
+    position: absolute;
+    cursor:pointer;
+    border-radius: 25px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--citrine);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggleInner:before {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+
