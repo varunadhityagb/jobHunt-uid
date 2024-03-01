@@ -1,43 +1,33 @@
-
-:root {
-    --night: #000f08ff;
-    --pine-green: #136f63ff;
-    --citrine: #e0ca3cff;
-    --coquelicot: #f34213ff;
-    --russian-violet: #3e2f5bff;
+body {
+    background-color: #437f97;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: var(--pine-green);
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .titleDiv {
-    background-color: gray;
+    background-color: #0d0221;
+    border-radius: 25px;
+    
 }
-
-.apply{
-    position: absolute;
-    top: 5%;
-    right: 6%; 
-}
-
-.hire {
-    position: absolute;
-    top: 5%;
-    right: 16%;   
-}
-
 
 .titleDiv .title {
     text-decoration: none;
     cursor: pointer;
-    font-family: 'Edu NSW ACT Foundation', cursive;
+    padding-left: 10px;
     font-size: 3rem;
-    color: var(--night);
+    color: whitesmoke;
 }
 
 .titleDiv > .title:hover {
-    color: var(--citrine);
+    color: #e0ca3cff;
 }
 
 .toggle input {
@@ -47,7 +37,7 @@ body {
 }
 
 input:checked + .toggleInner {
-    background-color: var(--coquelicot);
+    background-color: #e3655b;
 }
 
 input:checked + .toggleInner:before {
@@ -57,9 +47,9 @@ input:checked + .toggleInner:before {
   }
 
 .toggle {
-    position: absolute;
-    top: 4%;
-    right: 10%;
+    position:fixed;
+    top: 3%;
+    left: 94vw;
     width: 60px;
     height: 34px;
 }
@@ -72,7 +62,7 @@ input:checked + .toggleInner:before {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--citrine);
+    background-color: #33ca7f;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -91,4 +81,160 @@ input:checked + .toggleInner:before {
     border-radius: 25px;
 }
 
+#cbsLabel { 
+    position: fixed;
+    top: 3%;
+    left: 89vw;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
 
+.jobs {
+    list-style-type:none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+}
+
+.jobs > li {
+    padding: 10px;
+}
+
+[id^='jobTitle-'] {
+    cursor: pointer;
+    text-align: center;
+    border-color: white;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    width: 24vw;
+    font-size: 1rem;
+}
+
+.jobs li:nth-child(odd) [id ^= 'jobTitle-']{
+    background: rgba(252, 208, 161, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+}
+
+.jobs li:nth-child(even) [id ^= 'jobTitle-']{
+    background: rgba(227, 101, 91, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+}
+
+.jobHeader {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+[id ^= 'company-'] {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#addBtn {
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+    font-size: 1.5rem;
+    text-align: left;
+    color: azure;
+    border-radius: 40px;
+    background-color: black;
+}
+
+#addBtn div {
+    top: 1px;
+    left:10px;
+    position: relative;
+}
+
+.popup{
+    background-color: rgba(0,0,0,0.95);
+    width: 50%;
+    height: 75%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    border: 2px #f6f4f2 solid;
+}
+
+.popup::-webkit-scrollbar {
+    display: none;
+}
+
+.popup-subtitle {
+    font-size: 110%;
+    color: #f6f4f2;
+}
+
+#popup-title {
+    background:transparent;
+    color: #f6f4f2;
+    border-width: 0;
+    padding-top: 3%;
+    padding-left: 3%;
+    font-size: 250%;
+}
+
+
+#closeBtn {
+    position:absolute;
+    top: 2vh;
+    right: 1vw;
+    width: 30px;
+    height: 30px;   
+    border-radius: 30px;
+    background: red;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#jobCompany {
+    background: transparent;
+    color: #f6f4f2;
+    border-width: 0;
+    padding-left: 5%;
+    font-size: 120%;
+    width: 600px;
+}
+
+#jobDesc {
+    resize: none;
+    background: transparent;
+    color: #f6f4f2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-width: 0;
+    font-size: 120%;
+}
+
+#jobLocation {
+    background: transparent;
+    color: #f6f4f2;
+    border-width: 0;
+    width: 600px;
+    padding-left: 5%;
+    font-size: 120%
+}
+
+#jobType {
+    background: transparent;
+    color: #f6f4f2;
+    border-width: 0;
+    padding-left: 5%;
+    font-size: 120%;
+}
+
+#jobRequirements {
+    background: transparent;
+    color: #f6f4f2;
+    border-width: 0;
+    padding-left: 5%;
+    font-size: 120%;
+}

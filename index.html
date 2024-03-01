@@ -9,29 +9,78 @@
 
 </head>
 <body>
-    <div class="titleDiv">
-        <div class="title">Job Hunt Pro</div>
-        <div class="apply">Apply</div>
+    <nav class="titleDiv">
         <div class="toggle">
             <input type="checkbox" id="cbs">
             <span class="toggleInner"></span>
         </div>
-        <div class="hire">Hire</div>
+        <span class="title" class="unselectable">Job Hunt Pro</span>
+        <span id="cbsLabel" class="unselectable">Apply</span>
+    </nav>
+    
+    <h1 id="jobHeader" class="unselectable">Jobs</h1>
+    <div id="addBtn">
+        <div>+ Add New </div>
     </div>
-       
+    <div class="jobListings">
+        <ul class="jobs">
+            <li>
+                <div id="jobTitle-1" onclick="showDetails(this.id);" class="unselectable">Front-End Developer<br>
+                    <span id="company-1" class="unselectable">TechInnovate</span>
+                </div>
+            </li>
+            <li>
+                <div id="jobTitle-2" onclick="showDetails(this.id);" class="unselectable">Data Scientist<br>
+                    <span id="company-2" class="unselectable">DataWise</span>
+                </div>
+            </li>
+            <li>
+                <div id="jobTitle-3" onclick="showDetails(this.id);" class="unselectable">Cybersecurity Analyst<br>
+                    <span id="company-3" class="unselectable">SecureNet</span>
+                </div>
+            </li>
+            <li>
+                <div id="jobTitle-4" onclick="showDetails(this.id);" class="unselectable">UX/UI Designer<br>
+                    <span id="company-4" class="unselectable">CreativeSolutions</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="popup" style="overflow:scroll;">
+        <form>
+            <input type="text" name="jobTitle" id="popup-title" disabled>
+            <div id="closeBtn" onclick="hideDetails()"></div>
+            <input type="text" name="companyName" id="jobCompany" disabled>
+            <input type="text" name="location" id="jobLocation" disabled>
+            <div style="padding-top: 20px;">
+            <table style="width: 100%; border-spacing: 2%;" border = 1>
+                <tr>
+                    <td align="center"><label for="companyDescription" class="popup-subtitle">Company Description</label></td>
+                    <td><textarea name="companyDescription" id="jobDesc" style="width: 99%;" rows="6" disabled></textarea></td>
+                </tr>
+                <hr>
+                <tr>
+                    <td align="center"><label for="companyDescription" class="popup-subtitle">Job Type</label></td>
+                    <td><input type="text" name="type" id="jobType" disabled></td>
+                </tr>
+                <tr>
+                    <td align="center"><label for="companyDescription" class="popup-subtitle">Requirements</label></td>
+                    <td>
+                        <ul id="jobRequirements">
+
+                        </ul>
+                    </td>
+                </tr>
+            </table>   
+            </div>
+        </form>
+    </div>
+
+    
 
 
-    <script>
-        let toggleSwitch = document.querySelector(".toggle");
-        let cb = document.getElementById('cbs');
-        toggleSwitch.addEventListener('click', () => {
-            if(cb.checked == true) {
-                cb.checked = false;
-            } else {
-                cb.checked = true;
-            };
-        });
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
