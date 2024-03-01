@@ -3,7 +3,13 @@ let cb = document.getElementById('cbs');
 let cbLabel = document.getElementById('cbsLabel');
 let addBtn = document.getElementById('addBtn');
 let closeBtn = document.getElementById('closeBtn');
+let hireOpt = document.getElementById('hireOptions');
+let applyBtn = document.getElementById('applyBtn');
+
+var selected;
+
 addBtn.style.display = "none";
+hireOpt.style.display = "none";
 
 let pop = document.querySelector('.popup');
 pop.style.display = "none";
@@ -79,22 +85,28 @@ toggleSwitch.addEventListener('click', () => {
         cb.checked = false;
         cbLabel.innerHTML = "Apply";
         addBtn.style.display = "none";
+        hireOpt.style.display = "none";
+        applyBtn.style.display = "block";
 
         document.getElementById('popup-title').setAttribute('disabled', true);
         document.getElementById('jobCompany').setAttribute('disabled', true);
         document.getElementById('jobLocation').setAttribute('disabled', true);
         document.getElementById('jobDesc').setAttribute('disabled', true);
         document.getElementById('jobType').setAttribute('disabled', true);
+        document.getElementById('jobReq').setAttribute('disabled', true);
 
     } else {
         cb.checked = true;
         cbLabel.innerHTML = "Hire";
         addBtn.style.display = "block";
+        hireOpt.style.display = "block";
+        applyBtn.style.display = "none";
         document.getElementById('popup-title').attributes.removeNamedItem('disabled');
         document.getElementById('jobCompany').attributes.removeNamedItem('disabled');
         document.getElementById('jobLocation').attributes.removeNamedItem('disabled');
         document.getElementById('jobType').attributes.removeNamedItem('disabled');
         document.getElementById('jobDesc').attributes.removeNamedItem('disabled');
+        document.getElementById('jobReq').attributes.removeNamedItem('disabled');
     };
 });
 
@@ -123,12 +135,13 @@ addBtn.addEventListener('click', () => {
 function showDetails(id) {
     let arr = id.split('-');
     let jobN = arr[1];
+    selected = jobN;
     let jobTitle = document.getElementById('popup-title');
     let company = document.getElementById('jobCompany');
     let description = document.getElementById('jobDesc');
     let location = document.getElementById('jobLocation');
     let type = document.getElementById('jobType');
-    let jobReq = document.getElementById('jobRequirements');
+    let jobReq = document.getElementById('jobReq');
     jobTitle.value = jobOpenings[jobN].role;
     company.value =  "at " + jobOpenings[jobN].company;
     description.value = jobOpenings[jobN].companyDescription;
@@ -139,8 +152,7 @@ function showDetails(id) {
         jobReq.innerHTML = "No requirements";
     } else {
         for (i in jobOpenings[jobN].requirements) {
-            jobReq.innerHTML += "<li>" + jobOpenings[jobN].requirements[i] + "</li>";
-            console.log('done');
+            jobReq.innerHTML += "• " + jobOpenings[jobN].requirements[i] + "\n";
         }
     }
     pop.style.display = "block";
@@ -149,4 +161,35 @@ function showDetails(id) {
 
 function hideDetails() {
     pop.style.display = "none";
+}
+
+let saveBtn = document.querySelector('.saveBtn');
+
+saveBtn.addEventListener('click', () => {
+    let jobTitle = document.getElementById('popup-title').value;
+    let company = document.getElementById('jobCompany').value.split('at ')[1];
+    let description = document.getElementById('jobDesc').value;
+    let location = document.getElementById('jobLocation').value.split('Location: ')[1];
+    let type = document.getElementById('jobType').value;
+    let jobReq = document.getElementById('jobReq').value;
+
+    jobReq = jobReq.replace(/• /g, '');
+
+
+    jobOpenings[selected].role = jobTitle;
+    jobOpenings[selected].company = company;
+    jobOpenings[selected].companyDescription = description;
+    jobOpenings[selected].location = location;
+    jobOpenings[selected].type = type;
+    jobOpenings[selected].requirements = jobReq.split('\n');
+
+    let job = document.getElementById('jobTitle-' + selected);
+    job.innerHTML = jobTitle + "<br><span id='company-" + selected +  "' class='unselectable'>" + company + "</span>";
+    
+    hideDetails();
+});
+
+
+function redirect() {
+    window.open("https://forms.gle/VUe8Q2TSH2ExWorYA", "_blank");
 }

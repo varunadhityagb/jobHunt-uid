@@ -200,7 +200,7 @@ input:checked + .toggleInner:before {
     background: transparent;
     color: #f6f4f2;
     border-width: 0;
-    padding-left: 5%;
+    padding-left: 3%;
     font-size: 120%;
     width: 600px;
 }
@@ -214,12 +214,16 @@ input:checked + .toggleInner:before {
     font-size: 120%;
 }
 
+#jobDesc::-webkit-scrollbar  {
+    display: none;
+}
+
 #jobLocation {
     background: transparent;
     color: #f6f4f2;
     border-width: 0;
     width: 600px;
-    padding-left: 5%;
+    padding-left: 3%;
     font-size: 120%
 }
 
@@ -231,10 +235,48 @@ input:checked + .toggleInner:before {
     font-size: 120%;
 }
 
-#jobRequirements {
+#jobReq {
     background: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f6f4f2;
     border-width: 0;
     padding-left: 5%;
     font-size: 120%;
 }
+
+#jobReq::-webkit-scrollbar {
+    display: none;
+}
+
+
+.saveBtn {
+    cursor: pointer;
+    margin: 1%;
+    border-radius: 30px;
+    background-color: lightblue;
+    height: 5vh;
+    width: 5vw;
+}
+
+.saveBtnInner {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    top: 1%;
+    left:10%;
+    position: relative;
+    
+}
+
+#applyBtn {
+    position:fixed;
+    top: 2vh;
+    right: 5vw;
+    background-color: #33ca7f;
+    height: 25px;
+    width: 7vw;
+    justify-content: center;
+    padding: 1%;
+    font-weight: bold;
+    border-radius: 30px;
+}
+

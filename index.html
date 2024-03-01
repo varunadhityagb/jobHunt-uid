@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Hunt Pro</title>
-    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
     <link rel="stylesheet" href="css/style.css"/>
 
 </head>
@@ -53,26 +52,28 @@
             <div id="closeBtn" onclick="hideDetails()"></div>
             <input type="text" name="companyName" id="jobCompany" disabled>
             <input type="text" name="location" id="jobLocation" disabled>
+            <div id="applyBtn" onclick="redirect()">Apply Now</div>
             <div style="padding-top: 20px;">
-            <table style="width: 100%; border-spacing: 2%;" border = 1>
-                <tr>
-                    <td align="center"><label for="companyDescription" class="popup-subtitle">Company Description</label></td>
-                    <td><textarea name="companyDescription" id="jobDesc" style="width: 99%;" rows="6" disabled></textarea></td>
-                </tr>
-                <hr>
-                <tr>
-                    <td align="center"><label for="companyDescription" class="popup-subtitle">Job Type</label></td>
-                    <td><input type="text" name="type" id="jobType" disabled></td>
-                </tr>
-                <tr>
-                    <td align="center"><label for="companyDescription" class="popup-subtitle">Requirements</label></td>
-                    <td>
-                        <ul id="jobRequirements">
-
-                        </ul>
-                    </td>
-                </tr>
-            </table>   
+                <table style="width: 100%; border-spacing: 2%;" border = 1>
+                    <tr>
+                        <td align="center"><label for="companyDescription" class="popup-subtitle">Company Description</label></td>
+                        <td><textarea name="companyDescription" id="jobDesc" style="width: 99%;" rows="6" disabled></textarea></td>
+                    </tr>
+                    <hr>
+                    <tr>
+                        <td align="center"><label for="companyDescription" class="popup-subtitle">Job Type</label></td>
+                        <td><input type="text" name="type" id="jobType" disabled></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><label for="companyDescription" class="popup-subtitle">Requirements</label></td>
+                        <td>
+                            <textarea name="companyRequirements" id="jobReq" style="width: 99%;" rows="6" disabled></textarea>
+                        </td>
+                    </tr>                   
+                </table>
+                <div id="hireOptions" class="saveBtn">
+                    <div class="saveBtnInner unselectable">Save</div>
+                </div>
             </div>
         </form>
     </div>
