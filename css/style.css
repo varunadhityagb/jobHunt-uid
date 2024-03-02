@@ -1,5 +1,9 @@
 body {
-    background-color: #437f97;
+    /*background-color: #437f97;*/
+    background-image: linear-gradient(rgba(50,0,0,0.5),rgba(25,0,0,0.5),rgba(0,0,50,0.5)),url(../images/background.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -13,7 +17,8 @@ body {
 }
 
 .titleDiv {
-    background-color: #0d0221;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
     
 }
@@ -111,7 +116,7 @@ input:checked + .toggleInner:before {
 }
 
 .jobs li:nth-child(odd) [id ^= 'jobTitle-']{
-    background: rgba(252, 208, 161, 0.7);
+    background: rgba(252, 208, 161, 0.5);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.4px);
@@ -119,7 +124,7 @@ input:checked + .toggleInner:before {
 }
 
 .jobs li:nth-child(even) [id ^= 'jobTitle-']{
-    background: rgba(227, 101, 91, 0.7);
+    background: rgba(227, 101, 91, 0.6);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.4px);
@@ -141,6 +146,7 @@ input:checked + .toggleInner:before {
     height: 40px;
     width: 150px;
     font-size: 1.5rem;
+    margin-top: 1%;
     text-align: left;
     color: azure;
     border-radius: 40px;
@@ -154,7 +160,7 @@ input:checked + .toggleInner:before {
 }
 
 .popup{
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0,0,0,0.9);
     width: 50%;
     height: 75%;
     position: absolute;
@@ -278,5 +284,6 @@ input:checked + .toggleInner:before {
     padding: 1%;
     font-weight: bold;
     border-radius: 30px;
+    cursor: pointer;
 }
 
